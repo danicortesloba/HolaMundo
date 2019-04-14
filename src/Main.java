@@ -29,12 +29,13 @@ public class Main {
         Vehicle truckTwo = new Truck("blue", 150, 4, highwayRoad, 1000);
         truckTwo.honk();
 
-        if(truckTwo instanceof Vehicle)
-        {
-            System.out.println("Es un vehículo");
-        }else {
-            System.out.println("Es un camión");
-        }
+        // if(truckTwo instanceof Vehicle)
+        // {
+            //System.out.println("Es un vehículo");
+        //}
+        // else {
+            //System.out.println("Es un camión");
+        //}
 
     }
 }
