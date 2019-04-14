@@ -62,4 +62,8 @@ public class Vehicle {
         System.out.println("La velocidad actual es: " + this.speed);
     }
 
+    public void honk() {
+        System.out.println("piip");
+    }
+
 }
