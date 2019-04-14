@@ -24,6 +24,10 @@ public class Main {
         truckOne.checkSpeed();
         truckOne.honk();
         carOne.honk();
+        Vehicle carThree = new Car("yellow", 90, 4, cityRoad, 8);
+        carThree.honk();
+        Vehicle truckTwo = new Truck("blue", 150, 4, highwayRoad, 1000);
+        truckTwo.honk();
 
     }
 }
