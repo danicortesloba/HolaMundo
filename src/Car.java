@@ -2,13 +2,15 @@ public class Car {
     private String color;
     private int speed;
     private int numberOfWheels;
-    private static int maxSpeed;
+    private Road road;
 
 
-    public Car(String color, int speed, int numberOfWheels) {
+
+    public Car(String color, int speed, int numberOfWheels, Road road) {
         this.color = color;
         this.speed = speed;
         this.numberOfWheels = numberOfWheels;
+        this.road = road;
 
     }
 
@@ -29,38 +31,23 @@ public class Car {
     }
 
 
-    private void defineSpeedLimit(String roadType) {
-        if(roadType == "City"){
-            this.maxSpeed = 50;
-        }
-
-        else if(roadType == "Highway"){
-            this.maxSpeed = 120;
-        }
-        else {
-            System.out.println("Tipo de calle no válida");
-        }
-
-    }
-
-    private void allowAcceleration(int acceleration, String roadType){
+    private void allowAcceleration(int acceleration){
         this.speed = this.speed + acceleration;
-        System.out.println("Subimos tu velocidad por " + acceleration + ". Ahora tu velocidad es de " + speed + ". Recuerda que el máximo para " + roadType + " es de " + maxSpeed  + ".");
+        System.out.println("Subimos tu velocidad por " + acceleration + ". Ahora tu velocidad es de " + speed + ". Recuerda que el máximo  es de " + this.road.getMaxSpeed()  + ".");
     }
 
-    private void prohibitAcceleration(int acceleration, String roadType){
-        System.out.println("Exceso de velocidad. Tu velocidad actual es de " + speed + " y el máximo para " + roadType + " es de " + maxSpeed + ".");
-        this.speed = maxSpeed - 5;
+    private void prohibitAcceleration(int acceleration){
+        System.out.println("Exceso de velocidad. Tu velocidad actual es de " + speed + " y el máximo  es de " + this.road.getMaxSpeed() + ".");
+        this.speed = this.road.getMaxSpeed() - 5;
         System.out.println("Para tu protección, bajamos tu velocidad a " + speed + ".");
     }
 
-    public void accelerate(int acceleration, String roadType) {
-        defineSpeedLimit(roadType);
-        if(this.speed + acceleration <= maxSpeed){
-            allowAcceleration(acceleration, roadType);
+    public void accelerate(int acceleration) {
+        if(this.speed + acceleration <= this.road.getMaxSpeed()){
+            allowAcceleration(acceleration);
         }
         else {
-            prohibitAcceleration(acceleration, roadType);
+            prohibitAcceleration(acceleration);
 
         }
 
