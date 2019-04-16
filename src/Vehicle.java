@@ -4,14 +4,11 @@ public class Vehicle {
     private int numberOfWheels;
     private Road road;
 
-
-
     public Vehicle(String color, int speed, int numberOfWheels, Road road) {
         this.color = color;
         this.speed = speed;
         this.numberOfWheels = numberOfWheels;
         this.road = road;
-
     }
 
     public int getSpeed() {
@@ -30,14 +27,15 @@ public class Vehicle {
         this.color = color;
     }
 
-
     private void allowAcceleration(int acceleration){
         this.speed = this.speed + acceleration;
-        System.out.println("Subimos tu velocidad por " + acceleration + ". Ahora tu velocidad es de " + speed + ". Recuerda que el máximo  es de " + this.road.getMaxSpeed()  + ".");
+        System.out.println("Subimos tu velocidad por " + acceleration + ". Ahora tu velocidad es de " + speed + ". " +
+                "Recuerda que el máximo  es de " + this.road.getMaxSpeed()  + ".");
     }
 
     private void prohibitAcceleration(int acceleration){
-        System.out.println("Exceso de velocidad. Tu velocidad actual es de " + speed + " y el máximo  es de " + this.road.getMaxSpeed() + ".");
+        System.out.println("Exceso de velocidad. Tu velocidad actual es de " + speed + " y el máximo  es de " +
+                this.road.getMaxSpeed() + ".");
         this.speed = this.road.getMaxSpeed() - 5;
         System.out.println("Para tu protección, bajamos tu velocidad a " + speed + ".");
     }
@@ -48,14 +46,11 @@ public class Vehicle {
         }
         else {
             prohibitAcceleration(acceleration);
-
         }
-
     }
 
     public void changeColor(String newColor) {
         this.color = newColor;
-
     }
 
     public void checkSpeed() {
@@ -65,5 +60,4 @@ public class Vehicle {
     public void honk() {
         System.out.println("piip");
     }
-
 }

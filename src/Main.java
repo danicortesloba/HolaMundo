@@ -6,6 +6,23 @@ public class Main {
         Car carOne = new Car("yellow", 60, 4, cityRoad, 8);
         Car carTwo = new Car("green", 80, 4, highwayRoad, 4);
 
+        speedTesting(carOne, carTwo);
+
+        Truck truckOne = new Truck("blue", 90, 4, cityRoad, 500);
+        Vehicle carThree = new Car("yellow", 90, 4, cityRoad, 8);
+        Vehicle truckTwo = new Truck("blue", 150, 4, highwayRoad, 1000);
+
+        honkTesting(carOne, truckOne, carThree, truckTwo);
+    }
+
+    private static void honkTesting(Car carOne, Truck truckOne, Vehicle carThree, Vehicle truckTwo) {
+        truckOne.honk();
+        carOne.honk();
+        carThree.honk();
+        truckTwo.honk();
+    }
+
+    private static void speedTesting(Car carOne, Car carTwo) {
         int carOneSpeed = carOne.getSpeed();
         System.out.println(carOneSpeed);
         carOne.setSpeed(20);
@@ -19,23 +36,5 @@ public class Main {
         carTwo.accelerate(100);
         carOne.accelerate(120);
         carOne.accelerate(10);
-
-        Truck truckOne = new Truck("blue", 90, 4, cityRoad, 500);
-        truckOne.checkSpeed();
-        truckOne.honk();
-        carOne.honk();
-        Vehicle carThree = new Car("yellow", 90, 4, cityRoad, 8);
-        carThree.honk();
-        Vehicle truckTwo = new Truck("blue", 150, 4, highwayRoad, 1000);
-        truckTwo.honk();
-
-        // if(truckTwo instanceof Vehicle)
-        // {
-            //System.out.println("Es un vehículo");
-        //}
-        // else {
-            //System.out.println("Es un camión");
-        //}
-
     }
 }
