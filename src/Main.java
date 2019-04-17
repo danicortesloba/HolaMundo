@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
         Road cityRoad = new Road( RoadTypes.CITY);
@@ -13,6 +15,12 @@ public class Main {
         Vehicle truckTwo = new Truck("blue", 150, 4, highwayRoad, 1000);
 
         honkTesting(carOne, truckOne, carThree, truckTwo);
+
+        ArrayList list = new ArrayList( );
+        list.add(carOne);
+        list.add(carTwo);
+        TrafficJam jamOne = new TrafficJam(list);
+        jamOne.honkVehicles();
     }
 
     private static void honkTesting(Car carOne, Truck truckOne, Vehicle carThree, Vehicle truckTwo) {
