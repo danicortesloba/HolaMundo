@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -16,10 +17,18 @@ public class Main {
 
         honkTesting(carOne, truckOne, carThree, truckTwo);
 
-        ArrayList list = new ArrayList( );
-        list.add(carOne);
-        list.add(carTwo);
-        TrafficJam jamOne = new TrafficJam(list);
+        startTrafficJam(carOne, carTwo, truckOne, carThree, truckTwo);
+    }
+
+    private static void startTrafficJam(Car carOne, Car carTwo, Truck truckOne, Vehicle carThree, Vehicle truckTwo) {
+        List<Vehicle> vehiclesInJam = new ArrayList();
+        vehiclesInJam.add(carOne);
+        vehiclesInJam.add(carTwo);
+        vehiclesInJam.add(carThree);
+        vehiclesInJam.add(truckOne);
+        vehiclesInJam.add(truckTwo);
+
+        TrafficJam jamOne = new TrafficJam(vehiclesInJam);
         jamOne.honkVehicles();
     }
 
