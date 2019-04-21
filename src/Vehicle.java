@@ -1,4 +1,4 @@
-public class Vehicle {
+public class Vehicle implements Transportation {
     private String color;
     private int speed;
     private int numberOfWheels;
@@ -55,6 +55,10 @@ public class Vehicle {
 
     public void checkSpeed() {
         System.out.println("La velocidad actual es: " + this.speed);
+    }
+
+    public void makeTrafficNoise(){
+        honk();
     }
 
     public void honk() {

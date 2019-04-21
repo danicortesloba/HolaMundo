@@ -1,19 +1,16 @@
-import java.util.Iterator;
 import java.util.List;
 
 public class TrafficJam {
 
-    private List vehiclesInJam;
+    private List<Transportation> transportationInJam;
 
-    public TrafficJam(List vehiclesInJam) {
-        this.vehiclesInJam = vehiclesInJam;
+    public TrafficJam(List<Transportation> transportationInJam) {
+        this.transportationInJam = transportationInJam;
     }
 
-    public void honkVehicles() {
-        Iterator<Vehicle> vehicleIterator = this.vehiclesInJam.iterator();
-        while(vehicleIterator.hasNext()) {
-            Vehicle vehicle = vehicleIterator.next();
-            vehicle.honk();
+    public void startTrafficNoises() {
+        for (Transportation transportation:transportationInJam) {
+            transportation.makeTrafficNoise();
         }
     }
 }
