@@ -18,18 +18,18 @@ public class levelUp {
 
 
     public static void startMethods() {
-        speedTesting(carOne, carTwo);
-        honkTesting(carOne, truckOne, carThree, truckTwo);
-        createTrafficJam();
-        startPetting();
+        speedTesting();
+        honkTesting();
+        trafficJamTesting();
+        petTesting();
     }
 
-    private static void startPetting() {
+    private static void petTesting() {
         apolo.pet();
         mia.pet();
     }
 
-    private static void createTrafficJam() {
+    private static void trafficJamTesting() {
         transportationInJam = new ArrayList();
         transportationInJam.add(carOne);
         transportationInJam.add(carTwo);
@@ -51,14 +51,14 @@ public class levelUp {
         jamOne.startTrafficNoises();
     }
 
-    private static void honkTesting(Car carOne, Truck truckOne, Vehicle carThree, Vehicle truckTwo) {
+    private static void honkTesting() {
         truckOne.honk();
         carOne.honk();
         carThree.honk();
         truckTwo.honk();
     }
 
-    private static void speedTesting(Car carOne, Car carTwo) {
+    private static void speedTesting() {
         int carOneSpeed = carOne.getSpeed();
         System.out.println(carOneSpeed);
         carOne.setSpeed(20);
